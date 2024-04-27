@@ -1,19 +1,15 @@
 package com.cncservice.ecommerce.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import jakarta.persistence.Entity;
+import lombok.*;
 
-@Document(collection = "cart_items")
+@EqualsAndHashCode(callSuper = true)
+@Entity(name = "cart_items")
 @AllArgsConstructor
 @Data
 @Setter
 @Getter
-public class CartItem {
-  @Id private String id;
+public class CartItem extends BaseEntity {
   private Long productId;
   private String userId;
   private long quantity;
